@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_crud/components/user_tile.dart';
-import 'package:flutter_crud/data/dummy_users.dart';
+import 'package:flutter_crud/provider/users.dart';
+import 'package:provider/provider.dart';
 
 class UserList extends StatelessWidget {
   const UserList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    const users = {...DUMMY_USERS};
+    final Users users = Provider.of(context);
+
     return Scaffold(
         appBar: AppBar(
           title: const Text('Lista de Usuários'),
-          actions: [IconButton(onPressed: () {}, icon: Icon(Icons.add))],
+          actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.add))],
         ),
         body: ListView.builder(
-          itemCount: users.length,
-          itemBuilder: (ctx, i) => UserTile(user: users.values.elementAt(i)),
+          itemCount: users.count,
+          itemBuilder: (ctx, i) => UserTile(user: users.byIndex(i)),
         ));
   }
 }

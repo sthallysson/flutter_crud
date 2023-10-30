@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_crud/models/user.dart';
 
@@ -11,7 +9,7 @@ class UserTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final avatar = user.avatarUrl == null || user.avatarUrl.isEmpty
-        ? CircleAvatar(
+        ? const CircleAvatar(
             child: Icon(Icons.person),
           )
         : CircleAvatar(
@@ -21,18 +19,18 @@ class UserTile extends StatelessWidget {
         leading: avatar,
         title: Text(user.name),
         subtitle: Text(user.email),
-        trailing: Container(
+        trailing: SizedBox(
           width: 100,
           child: Row(
             children: [
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.edit),
+                icon: const Icon(Icons.edit),
                 color: Colors.orange,
               ),
               IconButton(
                   onPressed: () {},
-                  icon: Icon(Icons.delete),
+                  icon: const Icon(Icons.delete),
                   color: Colors.red),
             ],
           ),
