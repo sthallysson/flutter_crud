@@ -1,24 +1,22 @@
-// ignore_for_file: unnecessary_const
-
 import 'package:flutter_crud/models/user.dart';
 
 const DUMMY_USERS = {
-  '1': const User(
+  '1': User(
       id: '1',
       name: 'Maria',
       email: 'maria@alunos.com',
       avatarUrl: "https://i.pravatar.cc/"),
-  '2': const User(
+  '2': User(
       id: '2',
       name: 'João',
       email: 'joaogomes@hotmail.com',
       avatarUrl: "https://i.pravatar.cc/"),
-  '3': const User(
+  '3': User(
       id: '3',
       name: 'Rafael',
       email: 'rafael@gmail.com',
       avatarUrl: "https://i.pravatar.cc/"),
-  '4': const User(
+  '4': User(
       id: '4',
       name: 'Joana',
       email: 'joanadarc@gmail.com',
